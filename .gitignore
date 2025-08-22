@@ -11,8 +11,8 @@
 /.env*
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
+service/log/*
+service/tmp/*
 !/log/.keep
 !/tmp/.keep
 
@@ -31,7 +31,7 @@
 /public/assets
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+service/config/master.key
 
 .DS_Store
 /db_data/
