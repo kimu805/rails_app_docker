@@ -35,4 +35,3 @@ service/config/master.key
 
 .DS_Store
 /db_data/*
-
