@@ -1,2 +1,6 @@
 <h1>Messages#index</h1>
 <p>Find me in app/views/messages/index.html.erb</p>
+
+<%= render partial: "message", collection: @messages %>
+
+<%= link_to "メッセージ作成", new_message_path %>

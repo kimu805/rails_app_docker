@@ -1,2 +1,8 @@
 <h1>Messages#show</h1>
 <p>Find me in app/views/messages/show.html.erb</p>
+
+<%= render "message", message: @message %>
+
+<%= link_to "編集する", edit_message_path(@message) %>
+<%= link_to "削除する", message_path(@message), data: { turbo_method: :delete } %>
+<%= link_to "ホームに戻る", root_path %>
