@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      redirect_to root_path
+      redirect_to message_path(@message)
     else
       render :new, status: :unprocessable_entity
     end
