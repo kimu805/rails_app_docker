@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_08_022731) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_08_054312) do
   create_table "hellos", charset: "utf8mb3", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_08_022731) do
   end
 
   create_table "tasks", charset: "utf8mb3", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
