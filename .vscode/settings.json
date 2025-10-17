@@ -1,0 +1,6 @@
+{
+  "rubyLsp.addonSettings": {
+      "ruby.interpreter.commandPath": "/Users/kimurakazuto/.rbenv/shims/ruby"
+  }
+  
+}

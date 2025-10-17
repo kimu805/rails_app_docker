@@ -6,8 +6,12 @@ class Task < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc) }
 
+  def self.ransackable_attributes(auth_object = nil)
+    %w[name created_at]
+  end
+
   private
   def validate_name_not_including_comma
-    errors.add(:name, "にカンマを含めることはできません。") if name&.include?(",")
+    errors.add(:name, "にカンマを含めることはできません") if name&.include?(",")
   end
 end

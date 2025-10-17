@@ -13,6 +13,9 @@ services:
       - type: bind
         source: ./service 
         target: /service
+      - type: volume       # type: volume を明示
+        source: bundle_cache # source: ボリューム名
+        target: /usr/local/bundle # target: コンテナ内のマウント先
     depends_on:
       - db
   
@@ -26,3 +29,6 @@ services:
       - type: bind
         source: ./db_data
         target: /var/lib/mysql
+
+volumes:
+  bundle_cache:
