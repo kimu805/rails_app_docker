@@ -22,25 +22,24 @@ RSpec.describe Task, type: :model do
       it "名前がなければ、登録できない。" do
         @task.name = ""
         @task.valid?
-        expect(@task.errors.full_messages).to include("名前を入力してください")
+        expect(@task.errors.full_messages).to include("名称を入力してください")
       end
 
       it "名前が30文字より多ければ、登録できない。" do
         @task.name = "テストテストテストテストテストテストテストテストテストテストテスト"
         @task.valid?
-        expect(@task.errors.full_messages).to include("名前は30文字以下で入力してください")
+        expect(@task.errors.full_messages).to include("名称は30文字以内で入力してください")
+      end
+      it "名前にカンマが含まれていれば、登録できない" do
+        @task.name = "テス,ト"
+        @task.valid?
+        expect(@task.errors.full_messages).to include("名称にカンマを含めることはできません")
       end
 
       it "userが紐付いていなければ、登録できない。" do
         @task.user = nil
         @task.valid?
-        expect(@task.errors.full_messages).to include("ユーザーを入力してください")
-      end
-
-      it "名前にカンマが含まれていれば、登録できない" do
-        @task.name = "テス,ト"
-        @task.valid?
-        expect(@task.errors.full_messages).to include("名前にカンマを含めることはできません")
+        expect(@task.errors.full_messages).to include("Userを入力してください")
       end
     end
   end
