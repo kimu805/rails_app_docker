@@ -11,6 +11,7 @@ module Service
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
     config.i18n.default_locale = :ja
+    config.active_storage.variant_processor = :mini_magick
 
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}").to_s]
     # Please, add to the `ignore` list any other `lib` subdirectories that do
